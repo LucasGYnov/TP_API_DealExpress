@@ -35,25 +35,21 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-// Hashage mdp avant save
-userSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) return next();
+// Hash password before saving (async style — do not use next())
+userSchema.pre("save", async function () {
+  // only hash if password field was modified (or is new)
+  if (!this.isModified("password")) return;
 
-  try {
-    const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password, salt);
-    next();
-  } catch (error) {
-    next(error);
-  }
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
 });
 
-// Méthode pour comparer mdp
+// Method to compare passwords
 userSchema.methods.comparePassword = async function (candidatePassword) {
   return await bcrypt.compare(candidatePassword, this.password);
 };
 
-// Retirer mdp des réponses API
+// Remove password from JSON output
 userSchema.methods.toJSON = function () {
   const user = this.toObject();
   delete user.password;
