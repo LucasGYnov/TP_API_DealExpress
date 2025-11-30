@@ -177,7 +177,7 @@ router.delete("/:id", authenticate, async (req, res) => {
   }
 });
 
-// POST /api/deals/:id/vote - Voter hot/cold
+// POST /api/deals/:id/vote
 router.post(
   "/:id/vote",
   authenticate,
@@ -220,7 +220,7 @@ router.post(
   }
 );
 
-// DELETE /api/deals/:id/vote - Retirer son vote
+// DELETE /api/deals/:id/vote
 router.delete("/:id/vote", authenticate, async (req, res) => {
   try {
     const vote = await Vote.findOne({
