@@ -7,8 +7,16 @@ const voteSchema = new mongoose.Schema(
       enum: ["hot", "cold"],
       required: true,
     },
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
-    item: { type: mongoose.Schema.Types.ObjectId, ref: "Item", required: true },
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+    dealId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Deal",
+      required: true,
+    },
   },
   { timestamps: { createdAt: "createdAt" } }
 );
