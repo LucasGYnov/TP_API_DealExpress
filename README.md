@@ -1,4 +1,4 @@
-# DealExpress API - Plateforme de Bons Plans
+# DealExpress API - TP API
 
 TP API - Création d'une API REST complète inspirée de Dealabs permettant aux utilisateurs de partager des bons plans, de les voter et de les commenter, avec système de modération et gestion de rôles.
 
