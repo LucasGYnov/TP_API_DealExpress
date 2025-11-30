@@ -20,8 +20,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
  app.use("/api/auth", authRoutes);
-/* app.use("/api/deals", dealsRoutes);
-app.use("/api", commentsRoutes);
+app.use("/api/deals", dealsRoutes);
+/*  app.use("/api", commentsRoutes);
 app.use("/api/admin", adminRoutes); */
 
 // Root route
