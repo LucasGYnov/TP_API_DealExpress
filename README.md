@@ -18,6 +18,9 @@ cd dealexpress
 2. **Installer les dépendances**
 ```bash
 npm install
+
+npm install express mongoose jsonwebtoken bcryptjs dotenv cors express-validator
+npm install -D nodemon
 ```
 
 3. **Configuration de l'environnement**
