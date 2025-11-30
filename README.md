@@ -35,7 +35,7 @@ Editez le fichier `.env` avec vos configurations.
 npm run dev
 ```
 
-## 📚 Endpoints de l'API
+## Endpoints de l'API
 ### Authentification
 #### POST /api/auth/register
 Inscription d'un nouvel utilisateur
@@ -144,7 +144,7 @@ Modifier le rôle d'un utilisateur (Admin requis)
 }
 ```
 
-## 👥 Comptes de Test
+## Comptes de Test
 ### Utilisateur Standard
 ```json
 {
@@ -172,7 +172,7 @@ Modifier le rôle d'un utilisateur (Admin requis)
 }
 ```
 
-## 🎯 Scénario de Démonstration
+## Scénario de Démonstration
 1. **Création d'un deal par un utilisateur**
    - Connexion avec le compte user
    - POST /api/deals pour créer un deal en statut "pending"
@@ -192,8 +192,8 @@ Modifier le rôle d'un utilisateur (Admin requis)
 
 ---
 
-## 🔧 Configuration Swagger (À venir)
+## Configuration Swagger (À venir)
 La documentation Swagger sera disponible à l'endpoint `/api-docs` avec une description complète de tous les endpoints, modèles de données et exemples.
 
-## 📦 Backup (Bonus)
+## Backup (Bonus)
 Un script de backup automatique de la base MongoDB est prévu.
