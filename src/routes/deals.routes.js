@@ -90,6 +90,8 @@ router.post(
     body("title").isLength({ min: 5, max: 100 }),
     body("description").isLength({ min: 10, max: 500 }),
     body("price").isFloat({ min: 0 }),
+    body("originalPrice").optional().isFloat({ min: 0 }),
+    body("url").optional().isURL(),
     body("category").isIn(["High-Tech", "Maison", "Mode", "Loisirs", "Autre"]),
   ],
   async (req, res) => {
@@ -167,7 +169,8 @@ router.delete("/:id", authenticate, async (req, res) => {
       return res.status(403).json({ message: "Accès interdit" });
     }
 
-    await deal.remove();
+    await Deal.deleteOne({ _id: deal._id });
+
     res.json({ message: "Deal supprimé" });
   } catch (error) {
     console.error(error);
@@ -229,9 +232,8 @@ router.delete("/:id/vote", authenticate, async (req, res) => {
     });
     if (!vote) return res.status(404).json({ message: "Vote non trouvé" });
 
-    await vote.remove();
+    await Vote.deleteOne({ _id: vote._id });
 
-    // Recalculer température
     const votesHot = await Vote.countDocuments({
       dealId: req.params.id,
       type: "hot",
