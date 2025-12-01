@@ -1,0 +1,847 @@
+{
+  "info": {
+    "name": "DevAPI",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth test",
+      "item": [
+        {
+          "name": "createUser",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\":\"Test\",\n  \"email\":\"test@test.fr\",\n  \"password\":\"Azerty12345\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\":\"lucas@test.fr\",\n  \"password\":\"Azerty12345\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "meLucas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmQ1NjIwZjQ5MTAzNWQ5ZWVjN2YwZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0NTc4ODQ4LCJleHAiOjE3NjUxODM2NDh9.dnKLE5TNmZrlfNnXiXBk49UnT1Y9tsRvTVDo0_G39Ec",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/auth/me",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "me"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "meTestUser",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmQ1NjlhZjQ5MTAzNWQ5ZWVjN2YxMyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0NTc4OTcwLCJleHAiOjE3NjUxODM3NzB9.Ae_JIIzNwLDYkj1Y5KOnXsdT4qs2WqHK-kuBNGZcGug",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/auth/me",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "me"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Phase 2 - Deals",
+      "item": [
+        {
+          "name": "createDeal",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmQ1NjIwZjQ5MTAzNWQ5ZWVjN2YwZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0NTc4ODQ4LCJleHAiOjE3NjUxODM2NDh9.dnKLE5TNmZrlfNnXiXBk49UnT1Y9tsRvTVDo0_G39Ec",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/deals",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "deals"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"PROUT\",\n  \"description\": \"zfdezbezrgheberbrbreber\",\n  \"price\": 1,\n  \"originalPrice\": 10000,\n  \"url\": \"https://www.google.com\",\n  \"category\": \"Autre\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "deletDeal",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmQ1NjIwZjQ5MTAzNWQ5ZWVjN2YwZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0NTc4ODQ4LCJleHAiOjE3NjUxODM2NDh9.dnKLE5TNmZrlfNnXiXBk49UnT1Y9tsRvTVDo0_G39Ec",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/deals/692d5a49f491035d9eec7f1f",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "deals",
+                "692d5a49f491035d9eec7f1f"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "getDeal",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/deals?page=1",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "deals"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                }
+              ],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "getDeals",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmQ1NjIwZjQ5MTAzNWQ5ZWVjN2YwZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0NTc4ODQ4LCJleHAiOjE3NjUxODM2NDh9.dnKLE5TNmZrlfNnXiXBk49UnT1Y9tsRvTVDo0_G39Ec",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/deals?page=1",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "deals"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                }
+              ],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "modifDeal",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmQ1NjIwZjQ5MTAzNWQ5ZWVjN2YwZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0NTc4ODQ4LCJleHAiOjE3NjUxODM2NDh9.dnKLE5TNmZrlfNnXiXBk49UnT1Y9tsRvTVDo0_G39Ec",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/deals/692d5a49f491035d9eec7f1f",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "deals",
+                "692d5a49f491035d9eec7f1f"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Super ... encore plus correction\",\n  \"description\": \"WAAAAW C'EST INCROYABLE, VITE VITE\",\n  \"price\": 998,\n  \"originalPrice\": 1499,\n  \"url\": \"https://www.google.com\",\n  \"category\": \"Autre\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "shearchDeal",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/deals/search?q=super",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "deals",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "super"
+                }
+              ],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Phase 3 - Votes",
+      "item": [
+        {
+          "name": "deletVote",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmQ1NjIwZjQ5MTAzNWQ5ZWVjN2YwZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0NTc4ODQ4LCJleHAiOjE3NjUxODM2NDh9.dnKLE5TNmZrlfNnXiXBk49UnT1Y9tsRvTVDo0_G39Ec",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/deals/692cd92aa827f003b52a0439/vote",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "deals",
+                "692cd92aa827f003b52a0439",
+                "vote"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "voteCold",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmQ1NjIwZjQ5MTAzNWQ5ZWVjN2YwZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0NTc4ODQ4LCJleHAiOjE3NjUxODM2NDh9.dnKLE5TNmZrlfNnXiXBk49UnT1Y9tsRvTVDo0_G39Ec",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/deals/692d5a49f491035d9eec7f1f/vote",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "deals",
+                "692d5a49f491035d9eec7f1f",
+                "vote"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{ \n  \"type\": \"cold\" \n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "voteHot",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmQ1NjIwZjQ5MTAzNWQ5ZWVjN2YwZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0NTc4ODQ4LCJleHAiOjE3NjUxODM2NDh9.dnKLE5TNmZrlfNnXiXBk49UnT1Y9tsRvTVDo0_G39Ec",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/deals/692d5a49f491035d9eec7f1f/vote",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "deals",
+                "692d5a49f491035d9eec7f1f",
+                "vote"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{ \n  \"type\": \"hot\" \n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Phase 4 - Comments",
+      "item": [
+        {
+          "name": "createComment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmQ1NjIwZjQ5MTAzNWQ5ZWVjN2YwZiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2NDU4MjU2MiwiZXhwIjoxNzY1MTg3MzYyfQ.Plb3OdbfM7JHxCFU-XzyoFKPOscN1IkutiTRrG2Gd0k",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/deals/692d65303960f05a94aa9bd5/comments",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "deals",
+                "692d65303960f05a94aa9bd5",
+                "comments"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"Incroyable, merci ! je prends.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "deletComment",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmQ1NjIwZjQ5MTAzNWQ5ZWVjN2YwZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0NTc4ODQ4LCJleHAiOjE3NjUxODM2NDh9.dnKLE5TNmZrlfNnXiXBk49UnT1Y9tsRvTVDo0_G39Ec",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/comments/692d65603960f05a94aa9bdc",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "comments",
+                "692d65603960f05a94aa9bdc"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "getDealComments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmQ1NjIwZjQ5MTAzNWQ5ZWVjN2YwZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0NTc4ODQ4LCJleHAiOjE3NjUxODM2NDh9.dnKLE5TNmZrlfNnXiXBk49UnT1Y9tsRvTVDo0_G39Ec",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/deals/692d65303960f05a94aa9bd5/comments",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "deals",
+                "692d65303960f05a94aa9bd5",
+                "comments"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "modifComment",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmQ1NjIwZjQ5MTAzNWQ5ZWVjN2YwZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0NTc4ODQ4LCJleHAiOjE3NjUxODM2NDh9.dnKLE5TNmZrlfNnXiXBk49UnT1Y9tsRvTVDo0_G39Ec",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/comments/692d65603960f05a94aa9bdc",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "comments",
+                "692d65603960f05a94aa9bdc"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"Ah non le deal ne fonctionne plus, il ont annulé la commande\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Phase 5 - Admin",
+      "item": [
+        {
+          "name": "appoveDeal",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmQ1NjIwZjQ5MTAzNWQ5ZWVjN2YwZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0NTc4ODQ4LCJleHAiOjE3NjUxODM2NDh9.dnKLE5TNmZrlfNnXiXBk49UnT1Y9tsRvTVDo0_G39Ec",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/admin/deals/692d5a49f491035d9eec7f1f/moderate",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "deals",
+                "692d5a49f491035d9eec7f1f",
+                "moderate"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{ \n  \"status\": \"approved\" \n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "getPendingDeals",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/admin/deals/pending",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "deals",
+                "pending"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "getUsers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmQ1NjIwZjQ5MTAzNWQ5ZWVjN2YwZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0NTc4ODQ4LCJleHAiOjE3NjUxODM2NDh9.dnKLE5TNmZrlfNnXiXBk49UnT1Y9tsRvTVDo0_G39Ec",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/admin/users?page=2&limit=2",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "2"
+                },
+                {
+                  "key": "limit",
+                  "value": "2"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "modifRole",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmQ1NjIwZjQ5MTAzNWQ5ZWVjN2YwZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0NTc4ODQ4LCJleHAiOjE3NjUxODM2NDh9.dnKLE5TNmZrlfNnXiXBk49UnT1Y9tsRvTVDo0_G39Ec",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/admin/users/692d569af491035d9eec7f13/role",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "users",
+                "692d569af491035d9eec7f13",
+                "role"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"role\": \"moderator\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "rejectDeal",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmQ1NjIwZjQ5MTAzNWQ5ZWVjN2YwZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0NTc4ODQ4LCJleHAiOjE3NjUxODM2NDh9.dnKLE5TNmZrlfNnXiXBk49UnT1Y9tsRvTVDo0_G39Ec",
+                "type": "string"
+              }
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:3000/api/admin/deals/692d66943960f05a94aa9bf2/moderate",
+              "protocol": "http",
+              "host": [
+                "localhost:3000"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "deals",
+                "692d66943960f05a94aa9bf2",
+                "moderate"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{ \n  \"status\": \"rejected\" \n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": []
+}
